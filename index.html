@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Thinking Games — Interactive</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <button id="sidebar-toggle" aria-label="Toggle sidebar">&#9776;</button>
+        <aside id="sidebar">
+            <div id="sidebar-header">
+                <h1>Math Thinking Games</h1>
+                <p class="author">Gardner / Tanton / 华罗庚金杯</p>
+                <div id="progress-container">
+                    <div id="progress-bar"><div id="progress-fill"></div></div>
+                    <span id="progress-text">0%</span>
+                </div>
+            </div>
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search topics...">
+            </div>
+            <nav id="chapter-nav"></nav>
+            <div id="sidebar-footer"><p class="copyright-notice" style="font-size:0.7rem;color:#888;margin-top:12px;text-align:center;">&copy; 2026 Hengzhe Zhao · AGPL-3.0 &amp; Commercial</p>
+                <button id="reset-progress">Reset Progress</button>
+            </div>
+        </aside>
+        <main id="main-content">
+            <div id="welcome-screen">
+                <div class="welcome-hero">
+                    <h1>Mathematical Thinking Games</h1>
+                    <h2>Logic Puzzles, Combinatorics &amp; Strategic Reasoning</h2>
+                    <p class="welcome-description">
+                        Sharpen your mind through puzzles, games, and challenges.
+                        From logic riddles to winning strategies — learn to think like a mathematician!
+                    </p>
+                </div>
+                <div class="roadmap">
+                    <h3>What You'll Explore</h3>
+                    <div class="roadmap-parts">
+                        <div class="roadmap-part">
+                            <h4>Part A: Logic Foundations</h4>
+                            <ul>
+                                <li>Ch 0: What Is Mathematical Thinking?</li>
+                                <li>Ch 1: True or False — Logic &amp; Propositions</li>
+                                <li>Ch 2: If...Then — Chains of Reasoning</li>
+                                <li>Ch 3: Proof by Contradiction</li>
+                            </ul>
+                        </div>
+                        <div class="roadmap-part">
+                            <h4>Part B: The Art of Counting</h4>
+                            <ul>
+                                <li>Ch 4: Addition &amp; Multiplication Principles</li>
+                                <li>Ch 5: Permutations — Order Matters</li>
+                                <li>Ch 6: Combinations — Order Doesn't</li>
+                                <li>Ch 7: Inclusion-Exclusion</li>
+                                <li>Ch 8: The Pigeonhole Principle</li>
+                            </ul>
+                        </div>
+                        <div class="roadmap-part">
+                            <h4>Part C: Patterns &amp; Sequences</h4>
+                            <ul>
+                                <li>Ch 9: Pattern Detective</li>
+                                <li>Ch 10: Arithmetic Sequences &amp; Sums</li>
+                                <li>Ch 11: Recursion &amp; Recurrence</li>
+                                <li>Ch 12: Mathematical Induction</li>
+                            </ul>
+                        </div>
+                        <div class="roadmap-part">
+                            <h4>Part D: Strategy &amp; Games</h4>
+                            <ul>
+                                <li>Ch 13: The Nim Game</li>
+                                <li>Ch 14: Winning Strategies</li>
+                                <li>Ch 15: Fair Games &amp; Sprague-Grundy</li>
+                                <li>Ch 16: Probabilistic Thinking</li>
+                            </ul>
+                        </div>
+                        <div class="roadmap-part">
+                            <h4>Part E: Classic Puzzles</h4>
+                            <ul>
+                                <li>Ch 17: River Crossing &amp; State Search</li>
+                                <li>Ch 18: Graph Theory — Euler Paths</li>
+                                <li>Ch 19: Sudoku &amp; Latin Squares</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <p class="welcome-start">Select a chapter from the sidebar to start your puzzle adventure!</p>
+            </div>
+            <div id="chapter-content" style="display:none;">
+                <div id="chapter-header">
+                    <div id="chapter-number-badge"></div>
+                    <h1 id="chapter-title"></h1>
+                    <p id="chapter-subtitle"></p>
+                </div>
+                <div id="section-tabs"></div>
+                <div id="section-content"></div>
+                <div id="exercises-panel" style="display:none;">
+                    <h3>Exercises</h3>
+                    <div id="exercises-list"></div>
+                </div>
+                <div id="chapter-nav-buttons">
+                    <button id="prev-btn">&larr; Previous</button>
+                    <span id="section-indicator"></span>
+                    <button id="next-btn">Next &rarr;</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script>
+    window.CHAPTER_MANIFEST = [
+        {number:0,  id:'ch00', title:'What Is Mathematical Thinking?',      file:'ch00-intro'},
+        {number:1,  id:'ch01', title:'True or False — Logic & Propositions', file:'ch01-logic'},
+        {number:2,  id:'ch02', title:'If...Then — Chains of Reasoning',     file:'ch02-reasoning'},
+        {number:3,  id:'ch03', title:'Proof by Contradiction',              file:'ch03-contradiction'},
+        {number:4,  id:'ch04', title:'Addition & Multiplication Principles', file:'ch04-counting-principles'},
+        {number:5,  id:'ch05', title:'Permutations — Order Matters',        file:'ch05-permutations'},
+        {number:6,  id:'ch06', title:'Combinations — Order Doesn\'t',       file:'ch06-combinations'},
+        {number:7,  id:'ch07', title:'Inclusion-Exclusion',                 file:'ch07-inclusion-exclusion'},
+        {number:8,  id:'ch08', title:'The Pigeonhole Principle',            file:'ch08-pigeonhole'},
+        {number:9,  id:'ch09', title:'Pattern Detective',                   file:'ch09-patterns'},
+        {number:10, id:'ch10', title:'Arithmetic Sequences & Sums',         file:'ch10-arithmetic-seq'},
+        {number:11, id:'ch11', title:'Recursion & Recurrence',              file:'ch11-recursion'},
+        {number:12, id:'ch12', title:'Mathematical Induction',              file:'ch12-induction'},
+        {number:13, id:'ch13', title:'The Nim Game',                        file:'ch13-nim'},
+        {number:14, id:'ch14', title:'Winning Strategies',                  file:'ch14-winning-strategies'},
+        {number:15, id:'ch15', title:'Fair Games & Sprague-Grundy',         file:'ch15-sprague-grundy'},
+        {number:16, id:'ch16', title:'Probabilistic Thinking',              file:'ch16-probability'},
+        {number:17, id:'ch17', title:'River Crossing & State Search',       file:'ch17-river-crossing'},
+        {number:18, id:'ch18', title:'Graph Theory — Euler Paths',          file:'ch18-graph-theory'},
+        {number:19, id:'ch19', title:'Sudoku & Latin Squares',              file:'ch19-sudoku'}
+    ];
+    </script>
+    <script src="viz-engine.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
