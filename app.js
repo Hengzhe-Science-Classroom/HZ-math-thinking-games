@@ -1,4 +1,4 @@
-// === The Math Thinking Games · Interactive - Core Application ===
+// === Mathematical Thinking Games - Core Application ===
 window.CHAPTERS = window.CHAPTERS || [];
 window.EXTRA_VIZ = window.EXTRA_VIZ || {};
 
@@ -114,6 +114,7 @@ const App = {
     async loadChapter(chId) {
         if (this._loading) return;
         this._loading = true;
+
         document.getElementById('welcome-screen').style.display = 'none';
         document.getElementById('chapter-content').style.display = 'block';
         document.getElementById('section-content').innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:60px 0;">Loading chapter...</p>';
@@ -148,6 +149,7 @@ const App = {
         document.getElementById('main-content').scrollTop = 0;
         document.getElementById('sidebar').classList.remove('open');
         this._loading = false;
+
         this.renderSidebar();
     },
 
@@ -337,9 +339,9 @@ const App = {
         prev.disabled = this.currentSectionIndex === 0;
         const isLast = this.currentSectionIndex >= this.currentChapter.sections.length - 1;
         const nextM = this.manifest.find(m => m.number === this.currentChapter.number + 1);
-        if (isLast && nextM) { next.textContent = 'Next: ' + nextM.title + ' →'; next.disabled = false; }
+        if (isLast && nextM) { next.textContent = 'Next: ' + nextM.title + ' \u2192'; next.disabled = false; }
         else if (isLast) { next.textContent = 'Course Complete!'; next.disabled = true; }
-        else { next.textContent = 'Next →'; next.disabled = false; }
+        else { next.textContent = 'Next \u2192'; next.disabled = false; }
     },
     nextSection() {
         if (!this.currentChapter) return;

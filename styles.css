@@ -54,12 +54,12 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,s
 .welcome-description { color:var(--text-secondary); margin-top:16px; max-width:600px; margin-left:auto; margin-right:auto; line-height:1.8; }
 .roadmap { margin-top:48px; }
 .roadmap h3 { font-size:1.1rem; color:var(--text-bright); margin-bottom:24px; text-align:center; }
-.roadmap-parts { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.roadmap-parts { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:20px; }
 .roadmap-part { background:var(--bg-card); border:1px solid var(--border-default); border-radius:12px; padding:20px; }
 .roadmap-part h4 { font-size:0.9rem; color:var(--accent-teal); margin-bottom:12px; font-weight:600; }
 .roadmap-part ul { list-style:none; }
 .roadmap-part li { font-size:0.85rem; color:var(--text-secondary); padding:4px 0 4px 16px; position:relative; }
-.roadmap-part li::before { content:'›'; position:absolute; left:0; color:var(--accent-blue); }
+.roadmap-part li::before { content:'\203A'; position:absolute; left:0; color:var(--accent-blue); }
 .welcome-start { text-align:center; color:var(--text-muted); margin-top:40px; font-size:0.9rem; }
 
 /* Chapter Content */
@@ -74,7 +74,7 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,s
 .section-tab { padding:8px 16px; font-size:0.82rem; color:var(--text-secondary); cursor:pointer; border-radius:6px; transition:all var(--ts); border:none; background:none; white-space:nowrap; font-family:inherit; }
 .section-tab:hover { color:var(--text-primary); background:var(--bg-medium); }
 .section-tab.active { color:var(--text-bright); background:var(--bg-light); }
-.section-tab.completed::after { content:' ✓'; color:var(--accent-green); font-size:0.7rem; }
+.section-tab.completed::after { content:' \2713'; color:var(--accent-green); font-size:0.7rem; }
 
 /* Section Content Typography */
 #section-content { font-size:1rem; line-height:1.8; }

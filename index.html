@@ -13,7 +13,7 @@
         <aside id="sidebar">
             <div id="sidebar-header">
                 <h1>Math Thinking Games</h1>
-                <p class="author">Gardner / Tanton / 华罗庚金杯</p>
+                <p class="author">Gardner / 华罗庚金杯 / Tanton</p>
                 <div id="progress-container">
                     <div id="progress-bar"><div id="progress-fill"></div></div>
                     <span id="progress-text">0%</span>
@@ -23,7 +23,7 @@
                 <input type="text" id="search-input" placeholder="Search topics...">
             </div>
             <nav id="chapter-nav"></nav>
-            <div id="sidebar-footer"><p class="copyright-notice" style="font-size:0.7rem;color:#888;margin-top:12px;text-align:center;">&copy; 2026 Hengzhe Zhao · AGPL-3.0 &amp; Commercial</p>
+            <div id="sidebar-footer"><p class="copyright-notice" style="font-size:0.7rem;color:#888;margin-top:12px;text-align:center;">&copy; 2026 Hengzhe Zhao &middot; AGPL-3.0 &amp; Commercial</p>
                 <button id="reset-progress">Reset Progress</button>
             </div>
         </aside>
@@ -31,63 +31,67 @@
             <div id="welcome-screen">
                 <div class="welcome-hero">
                     <h1>Mathematical Thinking Games</h1>
-                    <h2>Logic Puzzles, Combinatorics &amp; Strategic Reasoning</h2>
+                    <h2>数学思维游戏 · Interactive</h2>
                     <p class="welcome-description">
-                        Sharpen your mind through puzzles, games, and challenges.
-                        From logic riddles to winning strategies — learn to think like a mathematician!
+                        Sharpen your mind with puzzles, games, and brain teasers! From logic puzzles
+                        to strategic games, discover the joy of mathematical thinking through
+                        playful exploration and interactive challenges.
                     </p>
                 </div>
                 <div class="roadmap">
                     <h3>What You'll Explore</h3>
                     <div class="roadmap-parts">
                         <div class="roadmap-part">
-                            <h4>Part A: Logic Foundations</h4>
+                            <h4>Part A: Logic Puzzles</h4>
                             <ul>
-                                <li>Ch 0: What Is Mathematical Thinking?</li>
-                                <li>Ch 1: True or False — Logic &amp; Propositions</li>
-                                <li>Ch 2: If...Then — Chains of Reasoning</li>
-                                <li>Ch 3: Proof by Contradiction</li>
+                                <li>Ch 0: Thinking Like a Mathematician</li>
+                                <li>Ch 1: Truth-Tellers &amp; Liars</li>
+                                <li>Ch 2: Logic Grid Puzzles</li>
                             </ul>
                         </div>
                         <div class="roadmap-part">
-                            <h4>Part B: The Art of Counting</h4>
+                            <h4>Part B: Patterns &amp; Sequences</h4>
                             <ul>
-                                <li>Ch 4: Addition &amp; Multiplication Principles</li>
-                                <li>Ch 5: Permutations — Order Matters</li>
-                                <li>Ch 6: Combinations — Order Doesn't</li>
-                                <li>Ch 7: Inclusion-Exclusion</li>
-                                <li>Ch 8: The Pigeonhole Principle</li>
+                                <li>Ch 3: Spot the Pattern</li>
+                                <li>Ch 4: Magic Squares</li>
+                                <li>Ch 5: Number Tricks &amp; Surprises</li>
                             </ul>
                         </div>
                         <div class="roadmap-part">
-                            <h4>Part C: Patterns &amp; Sequences</h4>
+                            <h4>Part C: Counting &amp; Strategy</h4>
                             <ul>
-                                <li>Ch 9: Pattern Detective</li>
-                                <li>Ch 10: Arithmetic Sequences &amp; Sums</li>
-                                <li>Ch 11: Recursion &amp; Recurrence</li>
-                                <li>Ch 12: Mathematical Induction</li>
+                                <li>Ch 6: Clever Counting</li>
+                                <li>Ch 7: The Pigeonhole Principle</li>
+                                <li>Ch 8: Strategy Games</li>
                             </ul>
                         </div>
                         <div class="roadmap-part">
-                            <h4>Part D: Strategy &amp; Games</h4>
+                            <h4>Part D: Geometry Puzzles</h4>
                             <ul>
-                                <li>Ch 13: The Nim Game</li>
-                                <li>Ch 14: Winning Strategies</li>
-                                <li>Ch 15: Fair Games &amp; Sprague-Grundy</li>
-                                <li>Ch 16: Probabilistic Thinking</li>
+                                <li>Ch 9: Geometric Reasoning</li>
+                                <li>Ch 10: Tiling &amp; Tessellation</li>
+                                <li>Ch 11: Topology Puzzles</li>
                             </ul>
                         </div>
                         <div class="roadmap-part">
-                            <h4>Part E: Classic Puzzles</h4>
+                            <h4>Part E: Graph &amp; Network Puzzles</h4>
                             <ul>
-                                <li>Ch 17: River Crossing &amp; State Search</li>
-                                <li>Ch 18: Graph Theory — Euler Paths</li>
-                                <li>Ch 19: Sudoku &amp; Latin Squares</li>
+                                <li>Ch 12: Bridges &amp; Paths</li>
+                                <li>Ch 13: Map Coloring</li>
+                            </ul>
+                        </div>
+                        <div class="roadmap-part">
+                            <h4>Part F: Mind-Bending Ideas</h4>
+                            <ul>
+                                <li>Ch 14: Infinity &amp; Paradoxes</li>
+                                <li>Ch 15: Probability Puzzles</li>
+                                <li>Ch 16: Cryptarithmetic &amp; Codes</li>
+                                <li>Ch 17: The Joy of Mathematics</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <p class="welcome-start">Select a chapter from the sidebar to start your puzzle adventure!</p>
+                <p class="welcome-start">Select a chapter from the sidebar to start playing with math!</p>
             </div>
             <div id="chapter-content" style="display:none;">
                 <div id="chapter-header">
@@ -96,13 +100,13 @@
                     <p id="chapter-subtitle"></p>
                 </div>
                 <div id="section-tabs"></div>
-                <div id="section-content"></div>
+                <article id="section-content"></article>
                 <div id="exercises-panel" style="display:none;">
                     <h3>Exercises</h3>
                     <div id="exercises-list"></div>
                 </div>
                 <div id="chapter-nav-buttons">
-                    <button id="prev-btn">&larr; Previous</button>
+                    <button id="prev-btn" disabled>&larr; Previous</button>
                     <span id="section-indicator"></span>
                     <button id="next-btn">Next &rarr;</button>
                 </div>
@@ -112,31 +116,31 @@
 
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script src="viz-engine.js"></script>
+
     <script>
     window.CHAPTER_MANIFEST = [
-        {number:0,  id:'ch00', title:'What Is Mathematical Thinking?',      file:'ch00-intro'},
-        {number:1,  id:'ch01', title:'True or False — Logic & Propositions', file:'ch01-logic'},
-        {number:2,  id:'ch02', title:'If...Then — Chains of Reasoning',     file:'ch02-reasoning'},
-        {number:3,  id:'ch03', title:'Proof by Contradiction',              file:'ch03-contradiction'},
-        {number:4,  id:'ch04', title:'Addition & Multiplication Principles', file:'ch04-counting-principles'},
-        {number:5,  id:'ch05', title:'Permutations — Order Matters',        file:'ch05-permutations'},
-        {number:6,  id:'ch06', title:'Combinations — Order Doesn\'t',       file:'ch06-combinations'},
-        {number:7,  id:'ch07', title:'Inclusion-Exclusion',                 file:'ch07-inclusion-exclusion'},
-        {number:8,  id:'ch08', title:'The Pigeonhole Principle',            file:'ch08-pigeonhole'},
-        {number:9,  id:'ch09', title:'Pattern Detective',                   file:'ch09-patterns'},
-        {number:10, id:'ch10', title:'Arithmetic Sequences & Sums',         file:'ch10-arithmetic-seq'},
-        {number:11, id:'ch11', title:'Recursion & Recurrence',              file:'ch11-recursion'},
-        {number:12, id:'ch12', title:'Mathematical Induction',              file:'ch12-induction'},
-        {number:13, id:'ch13', title:'The Nim Game',                        file:'ch13-nim'},
-        {number:14, id:'ch14', title:'Winning Strategies',                  file:'ch14-winning-strategies'},
-        {number:15, id:'ch15', title:'Fair Games & Sprague-Grundy',         file:'ch15-sprague-grundy'},
-        {number:16, id:'ch16', title:'Probabilistic Thinking',              file:'ch16-probability'},
-        {number:17, id:'ch17', title:'River Crossing & State Search',       file:'ch17-river-crossing'},
-        {number:18, id:'ch18', title:'Graph Theory — Euler Paths',          file:'ch18-graph-theory'},
-        {number:19, id:'ch19', title:'Sudoku & Latin Squares',              file:'ch19-sudoku'}
+        {number:0,  id:'ch00', title:'Thinking Like a Mathematician',              file:'ch00-thinking'},
+        {number:1,  id:'ch01', title:'Truth-Tellers & Liars',                     file:'ch01-truth-liars'},
+        {number:2,  id:'ch02', title:'Logic Grid Puzzles',                         file:'ch02-logic-grids'},
+        {number:3,  id:'ch03', title:'Spot the Pattern',                           file:'ch03-patterns'},
+        {number:4,  id:'ch04', title:'Magic Squares',                              file:'ch04-magic-squares'},
+        {number:5,  id:'ch05', title:'Number Tricks & Surprises',                  file:'ch05-number-tricks'},
+        {number:6,  id:'ch06', title:'Clever Counting',                            file:'ch06-counting'},
+        {number:7,  id:'ch07', title:'The Pigeonhole Principle',                   file:'ch07-pigeonhole'},
+        {number:8,  id:'ch08', title:'Strategy Games',                             file:'ch08-strategy'},
+        {number:9,  id:'ch09', title:'Geometric Reasoning',                        file:'ch09-geometry'},
+        {number:10, id:'ch10', title:'Tiling & Tessellation',                      file:'ch10-tiling'},
+        {number:11, id:'ch11', title:'Topology Puzzles',                           file:'ch11-topology'},
+        {number:12, id:'ch12', title:'Bridges & Paths',                            file:'ch12-bridges'},
+        {number:13, id:'ch13', title:'Map Coloring',                               file:'ch13-coloring'},
+        {number:14, id:'ch14', title:'Infinity & Paradoxes',                       file:'ch14-infinity'},
+        {number:15, id:'ch15', title:'Probability Puzzles',                        file:'ch15-probability'},
+        {number:16, id:'ch16', title:'Cryptarithmetic & Codes',                    file:'ch16-cryptarithmetic'},
+        {number:17, id:'ch17', title:'The Joy of Mathematics',                     file:'ch17-joy'},
     ];
     </script>
-    <script src="viz-engine.js"></script>
+
     <script src="app.js"></script>
 </body>
 </html>
